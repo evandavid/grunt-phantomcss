@@ -16,7 +16,7 @@ var sendMessage = function() {
 
 // Initialise CasperJs
 var phantomCSSPath = args.phantomCSSPath;
-phantom.casperPath = phantomCSSPath+s+'CasperJs';
+phantom.casperPath = phantomCSSPath+s+'libs'+s+'casperjs';
 phantom.injectJs(phantom.casperPath+s+'bin'+s+'bootstrap.js');
 
 var casper = require('casper').create({
