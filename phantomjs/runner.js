@@ -1,6 +1,5 @@
 var fs = require('fs');
 var s = fs.separator;
-var path = require('path');
 
 // Parse arguments passed in from the grunt task
 var args = JSON.parse(phantom.args[0]);
@@ -17,7 +16,7 @@ var sendMessage = function() {
 
 // Initialise CasperJs
 var phantomCSSPath = args.phantomCSSPath;
-phantom.casperPath = path.join(__dirname, '..', 'node_modules', 'casperjs');
+phantom.casperPath = args.casperPath;
 phantom.injectJs(phantom.casperPath+s+'bin'+s+'bootstrap.js');
 
 var casper = require('casper').create({
