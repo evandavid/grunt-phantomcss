@@ -18,6 +18,7 @@ var sendMessage = function() {
 var phantomCSSPath = args.phantomCSSPath;
 phantom.casperPath = args.casperPath;
 phantom.injectJs(phantom.casperPath+s+'bin'+s+'bootstrap.js');
+phantom.casperTest = true;
 
 var casper = require('casper').create({
     viewportSize: viewportSize,
