@@ -33,7 +33,7 @@ phantomcss.init({
     screenshotRoot: args.screenshots,
     failedComparisonsRoot: args.failures,
     libraryRoot: phantomCSSPath, // Give absolute path, otherwise PhantomCSS fails
-    cleanupComparisonImages: true,
+    comparisonResultRoot: args.results,
 
     onFail: function(test) {
         sendMessage('onFail', test);
