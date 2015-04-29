@@ -1,5 +1,6 @@
 var fs = require('fs');
 var s = fs.separator;
+var path = require('path');
 
 // Parse arguments passed in from the grunt task
 var args = JSON.parse(phantom.args[0]);
