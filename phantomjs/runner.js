@@ -48,7 +48,6 @@ phantomcss.init({
         sendMessage('onComplete', allTests, noOfFails, noOfErrors);
     }
 });
-phantomcss.turnOffAnimations(); 
 
 // Run the test scenarios
 args.test.forEach(function(testSuite) {
