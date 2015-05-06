@@ -110,7 +110,7 @@ module.exports = function(grunt) {
         };
 
         var resultName = function(name){
-          return name.replace(options.results, options.screenshots);
+          return name.replace(options.results, '');
         }
 
         var messageHandlers = {
