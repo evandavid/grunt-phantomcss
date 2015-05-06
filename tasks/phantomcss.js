@@ -109,15 +109,24 @@ module.exports = function(grunt) {
             }
         };
 
+        var resultName = function(name){
+          return options.template + name.replace(options.results,'');
+        }
+
         var messageHandlers = {
             onFail: function(test) {
-                grunt.log.writeln('Visual change found for ' + path.basename(test.filename) + ' (' + test.mismatch + '% mismatch)');
+                grunt.log.warn('Visual change found for ' + resultName(test.filename) + ' (' + test.mismatch + '% mismatch)');
             },
             onPass: function(test) {
-                grunt.log.writeln('No changes found for ' + path.basename(test.filename));
+                grunt.log.ok('No changes found for ' + resultName(test.filename));
+            },
+            onNewImage: function(test){
+              if (test.filename.indexOf('.tmp') < 0){
+                grunt.log.writeln('New image on ' + resultName(test.filename));
+              }
             },
             onTimeout: function(test) {
-                grunt.log.writeln('Timeout while processing ' + path.basename(test.filename));
+                grunt.log.warn('Timeout while processing ' + resultName(test.filename));
             },
             onComplete: function(allTests, noOfFails, noOfErrors) {
                 if (allTests.length) {
