@@ -159,7 +159,6 @@ module.exports = function(grunt) {
         options.tempFile = tempFile.path;
         options.phantomCSSPath = phantomCSSPath;
         options.casperPath = casperPath;
-        options.engine = 'slimerjs';
 
         // Remove old diff screenshots
         deleteDiffScreenshots();
